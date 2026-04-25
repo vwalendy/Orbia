@@ -19,7 +19,7 @@ export interface Task {
   description?: string;
   startDate: string; // ISO date string
   endDate: string; // ISO date string
-  categoryId?: string;
+  categoryIds: string[]; // Supports multiple categories
   recurrence?: RecurrenceRule;
 }
 

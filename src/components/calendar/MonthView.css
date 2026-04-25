@@ -43,12 +43,16 @@
 }
 
 .day-cell.disabled {
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-primary);
+  color: var(--text-tertiary);
+}
+
+.day-cell.disabled .date-number {
   color: var(--text-tertiary);
 }
 
 .day-cell:hover {
-  background-color: var(--bg-tertiary);
+  background-color: rgba(255, 255, 255, 0.02);
 }
 
 .date-number {
@@ -56,6 +60,7 @@
   font-weight: 500;
   text-align: center;
   margin-bottom: 8px;
+  color: var(--text-primary);
 }
 
 .today-circle {
@@ -80,16 +85,18 @@
 .event-badge {
   font-size: 0.75rem;
   color: white;
-  padding: 4px 6px;
-  border-radius: 4px;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
-  transition: opacity var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+  font-weight: 600;
 }
 
 .event-badge:hover {
-  opacity: 0.8;
+  transform: translateY(-1px);
+  filter: brightness(1.2);
 }

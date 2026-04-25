@@ -6,6 +6,7 @@
   height: 64px;
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--border-light);
+  z-index: 20;
 }
 
 .header-left, .header-center, .header-right {
@@ -40,20 +41,22 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-primary);
+  letter-spacing: -0.02em;
 }
 
 .today-btn {
   padding: 8px 16px;
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-md);
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-primary);
   transition: all var(--transition-fast);
-  background: var(--bg-secondary);
+  background: var(--bg-tertiary);
 }
 
 .today-btn:hover {
-  background-color: var(--bg-tertiary);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-dark);
 }
 
 .date-nav {
@@ -76,24 +79,26 @@
 
 .current-date-title {
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-primary);
   min-width: 200px;
+  letter-spacing: -0.02em;
 }
 
 .search-bar {
   display: flex;
   align-items: center;
-  background-color: var(--bg-tertiary);
+  background-color: var(--bg-secondary);
   padding: 8px 12px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   gap: 8px;
-  transition: background-color var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid var(--border-medium);
+  transition: background-color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .search-bar:focus-within {
-  background-color: var(--bg-secondary);
-  box-shadow: 0 0 0 2px var(--brand-primary-light);
+  background-color: var(--bg-tertiary);
+  border-color: var(--brand-primary);
 }
 
 .search-icon {
@@ -106,19 +111,22 @@
   outline: none;
   width: 200px;
   font-size: 0.875rem;
+  color: var(--text-primary);
 }
 
 .view-select {
   padding: 8px 12px;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   border: 1px solid var(--border-medium);
   background-color: var(--bg-secondary);
+  color: var(--text-primary);
   font-weight: 500;
   outline: none;
   cursor: pointer;
-  transition: border-color var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
-.view-select:focus, .view-select:hover {
+.view-select:hover, .view-select:focus {
+  background-color: var(--bg-tertiary);
   border-color: var(--brand-primary);
 }

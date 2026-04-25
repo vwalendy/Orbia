@@ -1,26 +1,30 @@
+/* TaskModal.css */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(15, 23, 42, 0.4);
-  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  animation: fadeIn var(--transition-fast);
+  animation: fadeIn 200ms ease-out;
 }
 
 .modal-content {
   background-color: var(--bg-secondary);
-  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 480px;
+  max-width: 500px;
   box-shadow: var(--shadow-float);
   overflow: hidden;
-  animation: slideUp var(--transition-fast);
+  animation: slideUp 200ms ease-out;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes fadeIn {
@@ -29,84 +33,119 @@
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(15px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 20px 24px;
   border-bottom: 1px solid var(--border-light);
-  background-color: var(--bg-primary);
-}
-
-.modal-title {
-  font-size: 1.125rem;
-  font-weight: 600;
+  background-color: var(--bg-secondary);
 }
 
 .modal-body {
   padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .form-group label {
-  font-size: 0.875rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .form-group.row {
   flex-direction: row;
-  gap: 16px;
+  gap: 24px;
 }
 
 .input-half {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .modal-input {
   width: 100%;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border: 1px solid var(--border-medium);
   border-radius: var(--radius-md);
-  font-size: 0.875rem;
+  font-size: 0.95rem;
   outline: none;
-  transition: border-color var(--transition-fast);
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .modal-input:focus {
   border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px var(--brand-primary-light);
 }
 
 .modal-input.title-input {
-  font-size: 1.25rem;
-  padding: 12px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 0;
   border: none;
-  border-bottom: 2px solid transparent;
   border-radius: 0;
+  background: transparent;
+  flex: 1;
+  margin-right: 16px;
+  box-shadow: none;
 }
 
-.modal-input.title-input:focus {
-  border-bottom-color: var(--brand-primary);
+.modal-input.title-input::placeholder {
+  color: var(--text-tertiary);
 }
 
 .modal-input.textarea {
   resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+/* Category Pills Setup */
+.category-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 200ms ease;
+  background: transparent;
+}
+
+.category-pill:hover {
+  filter: brightness(1.2);
+  transform: translateY(-1px);
+}
+
+.pill-check {
+  margin-left: -4px;
 }
 
 .modal-footer {
@@ -115,7 +154,7 @@
   gap: 12px;
   padding: 16px 24px;
   border-top: 1px solid var(--border-light);
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
 }
 
 .btn {
@@ -133,13 +172,14 @@
 
 .btn-save:hover {
   background-color: var(--brand-primary-hover);
+  box-shadow: var(--shadow-glow);
 }
 
 .btn-delete {
-  background-color: transparent;
+  background-color: rgba(248, 113, 113, 0.1);
   color: var(--accent-red);
 }
 
 .btn-delete:hover {
-  background-color: #fee2e2;
+  background-color: rgba(248, 113, 113, 0.2);
 }
