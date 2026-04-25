@@ -1,0 +1,124 @@
+.week-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.week-header {
+  display: flex;
+  border-bottom: 1px solid var(--border-light);
+  background-color: var(--bg-secondary);
+}
+
+.time-col-header {
+  width: 60px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border-light);
+}
+
+.day-col-header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 0;
+  border-right: 1px solid var(--border-light);
+}
+
+.day-col-header:last-child {
+  border-right: none;
+}
+
+.day-col-header .day-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.day-col-header .day-date {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.scrollable-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.week-grid {
+  display: flex;
+}
+
+.time-col {
+  width: 60px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-light);
+}
+
+.time-slot-label {
+  height: 48px;
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  text-align: right;
+  padding-right: 8px;
+  position: relative;
+  top: -8px; 
+}
+
+.day-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-light);
+  position: relative;
+}
+
+.day-col:last-child {
+  border-right: none;
+}
+
+.time-slot {
+  height: 48px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.day-col .time-slot:last-child {
+  border-bottom: none;
+}
+
+/* Event Blocks */
+.event-block {
+  position: absolute;
+  left: 2px;
+  right: 6px;
+  border-radius: 4px;
+  padding: 4px;
+  color: white;
+  font-size: 0.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.event-block:hover {
+  opacity: 0.9;
+  z-index: 10;
+  transform: scale(1.02);
+}
+
+.event-title {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-time {
+  font-size: 0.65rem;
+  opacity: 0.8;
+}
